@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Josefin+Sans&family=Lexend+Deca&family=Livvic&display=swap');
+
+/* -------------------------- CSS Reset -------------------------- */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------------- Global Styling -------------------------- */
+:root{
+    --primary-font: 'Abel', sans-serif;
+    --title-font: 'Anton', sans-serif;
+    --paragraph-font: 'Lexend Deca', sans-serif;
+    --btn-font: 'Livvic', sans-serif;
+
+    --font-color: #3f4954;
+    --font-light: #686666da;
+    --nav-hover: #104f55;
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+body{
+    color: var(--font-color);
+}
+
+ul{
+    list-style: none;
+}
+
+.btn{
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+    border: none;
+    padding: 1rem 3rem;
+    font-family: var(--btn-font);
+    font-size: 1.1rem;
+}
+
+.btn-round{
+    border-radius: 2em;
+}
+
+.btn-transperent:hover{
+    border: 1px solid #a1c4fd;
+    background: transparent;
+    color: white;
+}
+
+/* -------------------------- Navbar -------------------------- */
+.nav{
+    /* background-color: sky; */
+    height: 10vh;
+    /* height: 50vh; */
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.nav .brand{
+    font-family: var(--paragraph-font);
+    color: var(--font-color);
+    font-size: 1.5rem;
+}
+
+.nav .nav-toggle-btn{
+    font-size: 1.6rem;
+}
+
+.nav .nav-items, .social{
+    position: absolute;
+    top: 7vh;
+    left: 5rem;
+}
+
+.nav .social{
+    top: 45vh;
+}
+
+.nav-items li{
+    margin: 2rem 0;
+}
+
+.nav-items a{
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+}
+
+.social .social-icon{
+    /* border: 2px solid red; */
+    margin-right: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.social .social-icon:hover{
+    color: var(--font-light);
+}
+
+/* -------------------------- Cover -------------------------- */
+
+.cover{
+    height: 80vh;
+    text-align: center;
+    padding-top: 20vh;
+    position: relative;
+    color: white;
+}
+
+.cover::before, .cover::after{
+    content: "";
+    height: 80vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cover::before{
+    background: url("/images/bg3.jfif");
+    background-size: 100vw 80vh;
+    z-index: -1;
+    opacity: 0.7;
+}
+.cover::after{
+    background-color: black;
+    z-index: -2;
+}
+
+.cover .wave{
+    /* border: 2px solid red; */
+    position: absolute;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    z-index: 1000;
+}
+
+.cover p{
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cover h2{
+    font-family: var(--paragraph-font);
+    font-size: 2.4rem;
+    margin: 0.7rem 0 2rem;
+}
+
+/* -------------------------- Media Queries -------------------------- */
+
+@media (min-width: 768px){
+    .nav{
+        align-items: center;
+        padding: 1.5rem 2.5vw;
+    }
+    .nav .nav-toggle-btn{
+        display: none;
+    }
+    .nav .nav-items, .social{
+        position: static;
+        display: flex;
+    }
+    
+    .nav-items li{
+        /* border: 2px solid red; */
+        height: 10vh;
+        /* width: 11.5vw; */
+        width: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-items li:hover{
+        background-color: var(--nav-hover);
+    }
+
+    .nav-items li:hover a{
+        color: white;
+    }
+
+}
